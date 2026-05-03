@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nghề tư vấn toàn cầu đi về đâu trong bối cảnh AI?</title>
+  <style>
+    :root {
+      --red: #C22620;
+      --gold: #D4AF37;
+      --ink: #1f2933;
+      --muted: #5f6b7a;
+      --line: #d9dee7;
+      --soft: #f6f7f9;
+      --paper: #ffffff;
+      --deep: #3b2422;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Aptos Display", "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: #f2f3f5;
+      line-height: 1.55;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      background: var(--paper);
+      min-height: 100vh;
+      box-shadow: 0 10px 34px rgba(20, 30, 45, 0.08);
+    }
+
+    header {
+      border-top: 10px solid var(--red);
+      padding: 28px 40px 24px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 0;
+    }
+
+    .logo {
+      width: 34px;
+      height: 34px;
+      border: 3px solid var(--red);
+      display: grid;
+      place-items: center;
+      color: var(--red);
+      font-weight: 800;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-family: Oswald, "Arial Narrow", "Aptos Display", Arial, sans-serif;
+      color: var(--red);
+      font-size: clamp(34px, 5vw, 64px);
+      text-transform: uppercase;
+      max-width: 980px;
+    }
+
+    .subtitle {
+      margin-top: 16px;
+      max-width: 920px;
+      color: var(--deep);
+      font-size: 19px;
+      font-weight: 600;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .meta-card {
+      border: 1px solid var(--line);
+      padding: 14px;
+      background: #fff;
+      min-height: 86px;
+    }
+
+    .meta-label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .meta-value {
+      font-weight: 750;
+      color: var(--ink);
+    }
+
+    main {
+      padding: 34px 40px 48px;
+    }
+
+    .toc {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 22px;
+      margin-bottom: 28px;
+    }
+
+    .toc h2 {
+      color: var(--red);
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: 22px;
+      columns: 2;
+      column-gap: 40px;
+    }
+
+    .toc li {
+      break-inside: avoid;
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      background: #fff;
+      margin: 14px 0;
+    }
+
+    details[open] {
+      box-shadow: 0 8px 22px rgba(30, 40, 55, 0.05);
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--red);
+      font-size: 20px;
+      border-left: 6px solid var(--red);
+      background: #fff;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      margin-left: auto;
+      color: var(--gold);
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    details[open] > summary::after {
+      content: "-";
+    }
+
+    .content {
+      padding: 0 24px 24px 26px;
+    }
+
+    .section-lead {
+      font-size: 18px;
+      font-weight: 650;
+      color: var(--deep);
+      margin: 8px 0 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 16px;
+    }
+
+    .box h3 {
+      color: var(--deep);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(194, 38, 32, 0.09);
+      color: var(--red);
+      border: 1px solid rgba(194, 38, 32, 0.28);
+      padding: 3px 8px;
+      font-size: 12px;
+      font-weight: 750;
+      margin: 2px 4px 2px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 20px;
+      font-size: 14px;
+    }
+
+    th {
+      background: var(--red);
+      color: #fff;
+      text-align: left;
+      font-weight: 800;
+      vertical-align: top;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px;
+      vertical-align: top;
+    }
+
+    td:first-child {
+      font-weight: 750;
+      color: var(--deep);
+    }
+
+    .note {
+      border-left: 5px solid var(--gold);
+      background: #fff9e7;
+      padding: 14px 16px;
+      margin: 16px 0;
+      color: #4a3a16;
+      font-weight: 600;
+    }
+
+    .warning {
+      border-left: 5px solid var(--red);
+      background: #fff1f0;
+      padding: 14px 16px;
+      margin: 16px 0;
+      color: #4b1d1a;
+      font-weight: 600;
+    }
+
+    ul, ol {
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: var(--red);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 40px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      header, main, footer {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .meta-grid, .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .toc ol {
+        columns: 1;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand-row">
+        <div class="brand">
+          <div class="logo">XL</div>
+          <div>XLeaders Academy</div>
+        </div>
+        <div>Ngày tài liệu: 03/05/2026</div>
+      </div>
+
+      <h1>Nghề tư vấn toàn cầu đi về đâu trong bối cảnh AI?</h1>
+      <p class="subtitle">
+        Nghiên cứu sâu từ góc nhìn mô hình kinh doanh, revenue model, workforce architecture và năng lực cốt lõi của các công ty tư vấn toàn cầu.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-card">
+          <div class="meta-label">Cách tiếp cận</div>
+          <div class="meta-value">Business Model trước, AI sau</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Đối tượng phân tích</div>
+          <div class="meta-value">Accenture, Deloitte, PwC, EY, KPMG</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Framework chính</div>
+          <div class="meta-value">Business Model Canvas 9 ô</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Đầu ra</div>
+          <div class="meta-value">HTML drilldown cho nghiên cứu chiến lược</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="toc">
+        <h2>Mục lục drilldown</h2>
+        <ol>
+          <li>Executive Summary</li>
+          <li>Vì sao phải bắt đầu từ Business Model?</li>
+          <li>Bức tranh 5 công ty tư vấn toàn cầu</li>
+          <li>So sánh Business Model Canvas 9 ô</li>
+          <li>Revenue Model: họ kiếm tiền bằng cách nào?</li>
+          <li>Consultant nằm ở đâu trong workforce?</li>
+          <li>Năng lực cốt lõi được tạo ra như thế nào?</li>
+          <li>AI tác động vào từng ô Business Model ra sao?</li>
+          <li>Hành động sớm của các công ty lớn</li>
+          <li>Mô hình mới đang nổi lên</li>
+          <li>Hàm ý cho tư vấn CEO/SME Việt Nam</li>
+          <li>Nguồn tham khảo chính thức</li>
+        </ol>
+      </section>
+
+      <details open>
+        <summary>I. Executive Summary</summary>
+        <div class="content">
+          <p class="section-lead">
+            Luận điểm trung tâm: AI không đơn thuần thay đổi công cụ làm việc của consultant. AI đang làm biến dạng mô hình kinh doanh của ngành tư vấn: từ bán giờ công và dự án sang bán năng lực chuyển đổi, nền tảng, AI agent, managed services và kết quả kinh doanh.
+          </p>
+
+          <div class="grid-2">
+            <div class="box">
+              <h3>10 kết luận chính</h3>
+              <ol>
+                <li>Mô hình tư vấn truyền thống dựa trên leverage pyramid đang bị thách thức.</li>
+                <li>Việc của junior consultant như research, tổng hợp, draft slide, phân tích sơ bộ dễ bị AI hóa.</li>
+                <li>Giá trị consultant dịch chuyển lên problem framing, judgment, domain expertise, client trust và change leadership.</li>
+                <li>Revenue model chuyển từ project fee sang recurring managed services, platform fee và outcome-based fee.</li>
+                <li>AI agent trở thành một loại “digital workforce” trong delivery model.</li>
+                <li>Big Four có lợi thế vì sở hữu trust, compliance, audit, tax, risk và quan hệ C-level.</li>
+                <li>Accenture là đối trọng quan trọng vì đi nhanh ở technology consulting, ecosystem và managed services.</li>
+                <li>Cạnh tranh không còn là “ai có nhiều consultant hơn”, mà là “ai phối hợp người + platform + dữ liệu + AI agent tốt hơn”.</li>
+                <li>Core competence của công ty tư vấn đang chuyển từ tri thức nằm trong người sang tri thức được mã hóa trong platform, playbook, agent và data asset.</li>
+                <li>Với tư vấn CEO/SME Việt Nam, cơ hội nằm ở sản phẩm hóa tri thức, tăng tốc delivery, đi sâu vào ngành và dùng AI để nâng cấp năng lực tư vấn.</li>
+              </ol>
+            </div>
+
+            <div class="box">
+              <h3>Hàm ý chiến lược</h3>
+              <p>
+                Nghề tư vấn không biến mất. Nhưng tầng công việc có giá trị thấp sẽ bị ép giá mạnh.
+                Tư vấn tương lai phải kết hợp 4 năng lực: <strong>tư duy hệ thống</strong>, <strong>chuyên môn ngành</strong>,
+                <strong>AI fluency</strong> và <strong>khả năng triển khai thay đổi</strong>.
+              </p>
+              <p>
+                Công ty tư vấn nào còn vận hành như “xưởng làm slide” sẽ mất lợi thế. Công ty nào biến tri thức thành hệ thống,
+                quy trình, công cụ, dữ liệu và dịch vụ lặp lại sẽ tăng quy mô nhanh hơn.
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>II. Vì sao phải bắt đầu từ Business Model?</summary>
+        <div class="content">
+          <p class="section-lead">
+            Nếu chỉ hỏi “AI thay consultant như thế nào”, ta sẽ nhìn vấn đề ở tầng nghề nghiệp cá nhân. Câu hỏi đúng hơn là: AI đang làm thay đổi cơ chế tạo giá trị và tạo doanh thu của công ty tư vấn như thế nào?
+          </p>
+
+          <div class="grid-3">
+            <div class="box">
+              <h3>1. Tầng công ty</h3>
+              <p>AI tác động vào revenue model, cost structure, delivery model, margin, năng lực scale và định vị cạnh tranh.</p>
+            </div>
+            <div class="box">
+              <h3>2. Tầng workforce</h3>
+              <p>AI làm thay đổi vai trò của partner, manager, consultant, analyst, specialist và delivery center.</p>
+            </div>
+            <div class="box">
+              <h3>3. Tầng cá nhân</h3>
+              <p>AI buộc consultant chuyển từ người làm tác vụ sang người thiết kế vấn đề, kiểm chứng logic, điều phối tri thức và dẫn dắt thay đổi.</p>
+            </div>
+          </div>
+
+          <div class="note">
+            Cách đọc nghiên cứu: Business Model là “hệ điều hành kinh tế” của công ty tư vấn. Consultant chỉ là một nguồn lực trong hệ điều hành đó. Khi AI thay đổi hệ điều hành, vai trò consultant cũng thay đổi theo.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>III. Bức tranh 5 công ty tư vấn toàn cầu</summary>
+        <div class="content">
+          <p class="section-lead">
+            Nghiên cứu sử dụng 5 doanh nghiệp lớn để tạo tương quan: 4 Big Four và Accenture. Accenture không thuộc Big Four kiểm toán, nhưng là benchmark bắt buộc vì quy mô, revenue model và năng lực công nghệ của họ đang định hình chuẩn mới cho ngành tư vấn.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Công ty</th>
+                <th>Doanh thu FY2025</th>
+                <th>Quy mô nhân sự</th>
+                <th>Điểm nổi bật liên quan AI</th>
+                <th>Vai trò trong nghiên cứu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Accenture</td>
+                <td>US$69.7B</td>
+                <td>Khoảng 799.000 người được nêu trong thông tin Q1 FY2025</td>
+                <td>GenAI/agentic AI revenue US$2.7B; bookings US$5.9B; đầu tư mạnh vào reinvention, AI, data, cloud, managed services.</td>
+                <td>Đối trọng công nghệ: technology-led consulting và managed services ở quy mô lớn.</td>
+              </tr>
+              <tr>
+                <td>Deloitte</td>
+                <td>US$70.5B</td>
+                <td>470.000+ người</td>
+                <td>GenAI, Agentic AI, Deloitte Engineering, Operate services, nền tảng Omnia và Ascend.</td>
+                <td>Big Four lớn nhất theo doanh thu, mô hình đa ngành và đa dịch vụ mạnh nhất.</td>
+              </tr>
+              <tr>
+                <td>PwC</td>
+                <td>US$56.9B</td>
+                <td>364.000 người</td>
+                <td>Đầu tư gần US$1.5B vào AI trong FY2025; AI agent ecosystem; Next Generation Audit.</td>
+                <td>Trust-led advisory, assurance, tax/legal và managed services.</td>
+              </tr>
+              <tr>
+                <td>EY</td>
+                <td>US$53.2B</td>
+                <td>406.000+ người</td>
+                <td>AI-related revenue tăng 30%; hơn 15.000 người làm dự án AI; EY.ai; 1.000 AI agents.</td>
+                <td>AI-powered enterprise reinvention, assurance, tax, governance và agentic platform.</td>
+              </tr>
+              <tr>
+                <td>KPMG</td>
+                <td>US$39.8B</td>
+                <td>276.030 người</td>
+                <td>KPMG Workbench multi-agent AI platform; trusted AI; AI workforce; managed services thế hệ mới.</td>
+                <td>Trusted AI, advisory, risk, compliance và hybrid human-digital workforce.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="warning">
+            Lưu ý phương pháp: số liệu FY2025 là số liệu công bố toàn cầu mới nhất từ từng công ty hoặc nguồn nhà đầu tư chính thức. Cấu trúc doanh thu giữa các công ty không hoàn toàn tương đồng, nên phần so sánh dùng để phân tích mô hình, không dùng như bảng xếp hạng tuyệt đối từng service line.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>IV. So sánh Business Model Canvas 9 ô</summary>
+        <div class="content">
+          <p class="section-lead">
+            9 ô Business Model Canvas giúp bóc tách điểm giống và khác nhau giữa các công ty tư vấn toàn cầu. Điểm chung là đều bán tri thức chuyên môn, niềm tin và năng lực triển khai. Điểm khác là trọng tâm cạnh tranh: công nghệ, audit/trust, tax/legal, strategy, risk, managed services hay AI platform.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>9 ô BMC</th>
+                <th>Accenture</th>
+                <th>Deloitte</th>
+                <th>PwC</th>
+                <th>EY</th>
+                <th>KPMG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1. Customer Segments</td>
+                <td>Tập đoàn lớn, khách hàng công nghệ, tài chính, sản xuất, y tế, public sector cần chuyển đổi số và AI.</td>
+                <td>Doanh nghiệp lớn, chính phủ, tổ chức tài chính, đa ngành, khách hàng cần transformation, risk, audit, tax.</td>
+                <td>Fortune Global 500, doanh nghiệp lớn, tổ chức cần trust, assurance, advisory, tax/legal.</td>
+                <td>Khách hàng cần assurance, tax, consulting, strategy & transactions, AI governance.</td>
+                <td>Doanh nghiệp cần audit, tax/legal, advisory, risk, compliance và workforce transformation.</td>
+              </tr>
+              <tr>
+                <td>2. Value Proposition</td>
+                <td>Reinvention bằng công nghệ, AI, data, cloud, managed services và ecosystem.</td>
+                <td>Multidisciplinary transformation: strategy, technology, risk, tax, audit, operate.</td>
+                <td>Build trust and solve important problems: assurance, advisory, tax/legal, AI-enabled reinvention.</td>
+                <td>Build confidence, reimagine enterprise bằng EY.ai, governance, assurance và domain expertise.</td>
+                <td>Trusted transformation, risk-informed advisory, responsible AI và managed services.</td>
+              </tr>
+              <tr>
+                <td>3. Channels</td>
+                <td>Global account, C-level relationship, tech alliances, investor visibility, thought leadership.</td>
+                <td>Partner network, global industry practices, C-suite access, alliances, reports, events.</td>
+                <td>Audit/tax client base, partner relationship, global account, annual review, thought leadership.</td>
+                <td>Assurance/tax network, EY-Parthenon, consulting practices, alliances, EY.ai platform.</td>
+                <td>Audit/risk/advisory relationships, global network, Microsoft alliance, KPMG platforms.</td>
+              </tr>
+              <tr>
+                <td>4. Customer Relationships</td>
+                <td>Dài hạn, transformation partner, managed services, co-innovation, enterprise reinvention.</td>
+                <td>Trusted advisor, implementation partner, operate partner, audit/tax recurring relationship.</td>
+                <td>Trust-based relationship, compliance recurring, advisory project, managed services.</td>
+                <td>Assurance relationship, transformation partnership, AI governance, industry solutions.</td>
+                <td>Risk/trust relationship, advisory transformation, managed services, AI workforce support.</td>
+              </tr>
+              <tr>
+                <td>5. Revenue Streams</td>
+                <td>Consulting, managed services, large transformation contracts, AI/data/cloud work.</td>
+                <td>Audit & assurance, consulting, strategy/risk/transactions, tax/legal, operate services.</td>
+                <td>Advisory, assurance, tax/legal, managed services, technology-enabled audit/tax.</td>
+                <td>Assurance, consulting, tax, EY-Parthenon strategy & transactions, AI projects.</td>
+                <td>Audit, tax/legal, advisory, risk, compliance, managed services.</td>
+              </tr>
+              <tr>
+                <td>6. Key Resources</td>
+                <td>Workforce công nghệ lớn, AI skills, delivery centers, proprietary tools, alliances.</td>
+                <td>470.000+ người, brand, industry expertise, platforms, audit/tax/risk assets.</td>
+                <td>364.000 người, trust brand, Fortune Global 500 access, AI investments, audit platform.</td>
+                <td>406.000+ người, EY.ai, assurance capability, tax domain, agentic platform.</td>
+                <td>276.030 người, trusted AI, KPMG Workbench, advisory/risk expertise.</td>
+              </tr>
+              <tr>
+                <td>7. Key Activities</td>
+                <td>Technology transformation, system integration, AI deployment, managed services, change.</td>
+                <td>Strategy, implementation, risk, audit, tax, operate, engineering, AI transformation.</td>
+                <td>Assurance, advisory, tax/legal, AI-enabled audit, managed services, workforce planning.</td>
+                <td>Assurance, tax, consulting, transactions, AI governance, enterprise reinvention.</td>
+                <td>Audit, tax/legal, advisory, risk management, AI workforce, managed services.</td>
+              </tr>
+              <tr>
+                <td>8. Key Partners</td>
+                <td>Microsoft, Google, AWS, SAP, Oracle, Salesforce, ServiceNow và các tech ecosystem lớn.</td>
+                <td>Google Cloud, SAP, Oracle, Salesforce, ServiceNow, cloud/AI ecosystem.</td>
+                <td>Google Cloud, Microsoft, Salesforce, SAP và các alliance triển khai AI/managed services.</td>
+                <td>NVIDIA, Microsoft, SAP, ServiceNow, cloud và AI alliances.</td>
+                <td>Microsoft, Azure AI Foundry, các alliance công nghệ và nền tảng AI.</td>
+              </tr>
+              <tr>
+                <td>9. Cost Structure</td>
+                <td>Nhân sự quy mô lớn, acquisitions, R&D, learning, delivery infrastructure, AI/data platforms.</td>
+                <td>Nhân sự chuyên môn, training, technology platforms, compliance, global delivery.</td>
+                <td>People, AI investment, audit platform, acquisition, compliance, global network.</td>
+                <td>People, US$1B+ annual AI investment, platforms, assurance tech, learning.</td>
+                <td>People, AI platform, trusted AI capability, risk/compliance infrastructure, alliances.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <details>
+        <summary>V. Revenue Model: họ kiếm tiền bằng cách nào?</summary>
+        <div class="content">
+          <p class="section-lead">
+            Revenue model của công ty tư vấn toàn cầu không còn đơn giản là “bán giờ chuyên gia”. Họ đang phối hợp nhiều dòng doanh thu: dự án, nhân sự, managed services, platform, audit/tax recurring, technology implementation và outcome-based value.
+          </p>
+
+          <div class="grid-2">
+            <div class="box">
+              <h3>Revenue model truyền thống</h3>
+              <ul>
+                <li><strong>Time & material:</strong> tính theo giờ/ngày công chuyên gia.</li>
+                <li><strong>Project fee:</strong> tính theo phạm vi dự án và deliverable.</li>
+                <li><strong>Retainer:</strong> cố vấn định kỳ cho lãnh đạo hoặc ban điều hành.</li>
+                <li><strong>Audit/tax recurring:</strong> dịch vụ lặp lại theo chu kỳ báo cáo, tuân thủ, kiểm toán.</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h3>Revenue model mới</h3>
+              <ul>
+                <li><strong>Managed services:</strong> vận hành liên tục một chức năng hoặc quy trình cho khách hàng.</li>
+                <li><strong>Platform/asset fee:</strong> thu từ nền tảng, accelerator, toolkit, dashboard, agent.</li>
+                <li><strong>Outcome-based fee:</strong> gắn phí với kết quả tiết kiệm chi phí, tăng năng suất, tăng doanh thu.</li>
+                <li><strong>AI transformation:</strong> tư vấn, xây dựng, triển khai, quản trị AI và digital workforce.</li>
+              </ul>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Dòng doanh thu</th>
+                <th>Bản chất kinh tế</th>
+                <th>Vì sao AI làm thay đổi?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hourly/project fee</td>
+                <td>Bán thời gian và chuyên môn của con người.</td>
+                <td>AI làm giảm thời gian thực hiện tác vụ, khiến khách hàng khó chấp nhận trả phí cao cho công việc thủ công.</td>
+              </tr>
+              <tr>
+                <td>Managed services</td>
+                <td>Bán năng lực vận hành liên tục, có SLA, có cải tiến lặp lại.</td>
+                <td>AI giúp tự động hóa, giám sát, chuẩn hóa và mở rộng delivery với chi phí biên thấp hơn.</td>
+              </tr>
+              <tr>
+                <td>Platform/AI agent</td>
+                <td>Bán tri thức đã được mã hóa thành công cụ, agent, workflow hoặc nền tảng.</td>
+                <td>Tri thức tư vấn không chỉ nằm trong consultant mà nằm trong system có thể nhân bản.</td>
+              </tr>
+              <tr>
+                <td>Outcome-based</td>
+                <td>Bán kết quả kinh doanh, chia sẻ giá trị tạo ra.</td>
+                <td>AI cho phép đo lường, theo dõi, tối ưu và chứng minh tác động nhanh hơn.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <details>
+        <summary>VI. Consultant nằm ở đâu trong workforce?</summary>
+        <div class="content">
+          <p class="section-lead">
+            Trong công ty tư vấn lớn, consultant là một mắt xích trong “hệ thống sản xuất tri thức”. Họ không đứng riêng lẻ. Họ nằm trong cấu trúc partner-led, pyramid leverage và delivery ecosystem.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Nhóm workforce</th>
+                <th>Vai trò kinh tế</th>
+                <th>Việc thường làm</th>
+                <th>Mức độ bị AI tác động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Partner / Managing Director</td>
+                <td>Tạo doanh thu, giữ quan hệ C-level, định vị vấn đề lớn.</td>
+                <td>Bán dự án, xây niềm tin, định hình agenda, chịu trách nhiệm P&L.</td>
+                <td>Thấp đến trung bình. AI hỗ trợ insight, nhưng trust và judgment vẫn là lõi.</td>
+              </tr>
+              <tr>
+                <td>Senior Manager / Manager</td>
+                <td>Chuyển vấn đề chiến lược thành chương trình triển khai.</td>
+                <td>Thiết kế giải pháp, quản trị dự án, điều phối team, làm việc với client.</td>
+                <td>Trung bình. AI tăng năng suất nhưng không thay thế năng lực điều phối phức tạp.</td>
+              </tr>
+              <tr>
+                <td>Consultant / Senior Consultant</td>
+                <td>Sản xuất phân tích, insight, mô hình, tài liệu, workshop.</td>
+                <td>Research, benchmark, data analysis, slide, report, PMO, phỏng vấn.</td>
+                <td>Cao. Nhiều tác vụ có thể AI hóa, nhưng người có domain và tư duy logic vẫn tăng giá trị.</td>
+              </tr>
+              <tr>
+                <td>Analyst / Associate</td>
+                <td>Nguồn lực leverage chi phí thấp trong pyramid.</td>
+                <td>Desk research, data cleaning, draft slide, note, tổng hợp tài liệu.</td>
+                <td>Rất cao. Đây là tầng bị AI thay thế hoặc tái định nghĩa mạnh nhất.</td>
+              </tr>
+              <tr>
+                <td>Specialist / Engineer / Data / AI Team</td>
+                <td>Biến tư vấn thành hệ thống, dữ liệu, công nghệ và tự động hóa.</td>
+                <td>Xây platform, tích hợp hệ thống, thiết kế workflow, triển khai AI agent.</td>
+                <td>Tăng giá trị. Đây là nhóm được kéo lên trung tâm trong mô hình mới.</td>
+              </tr>
+              <tr>
+                <td>Global Delivery / Managed Services</td>
+                <td>Scale delivery, giảm chi phí, chuẩn hóa vận hành.</td>
+                <td>Vận hành quy trình, support, monitoring, reporting, service management.</td>
+                <td>Cao nhưng hai chiều: tác vụ bị tự động hóa, nhưng nhu cầu quản trị digital operations tăng.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="note">
+            Điểm mấu chốt: AI làm yếu đi logic “càng nhiều junior càng có nhiều leverage”. Nhưng AI làm mạnh lên logic mới: “consultant giỏi + platform tốt + agent đúng + data sạch = delivery nhanh hơn, rẻ hơn, có khả năng scale hơn”.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>VII. Năng lực cốt lõi được tạo ra như thế nào?</summary>
+        <div class="content">
+          <p class="section-lead">
+            Năng lực cốt lõi của công ty tư vấn không chỉ là tuyển người giỏi. Đó là tổ hợp giữa thương hiệu, phương pháp luận, dữ liệu, quan hệ khách hàng, delivery engine, công nghệ và khả năng học tập tổ chức.
+          </p>
+
+          <div class="grid-3">
+            <div class="box">
+              <h3>1. Brand Trust</h3>
+              <p>Big Four có lợi thế vì gắn với audit, assurance, risk, tax và compliance. Khi AI tạo rủi ro mới, trust trở thành tài sản cạnh tranh.</p>
+            </div>
+            <div class="box">
+              <h3>2. Client Access</h3>
+              <p>Quan hệ C-level lâu dài giúp họ phát hiện vấn đề chiến lược sớm và bán được chương trình chuyển đổi quy mô lớn.</p>
+            </div>
+            <div class="box">
+              <h3>3. Methodology</h3>
+              <p>Framework, playbook, benchmark, database và IP nội bộ giúp chuẩn hóa chất lượng tư vấn.</p>
+            </div>
+            <div class="box">
+              <h3>4. Talent Pyramid</h3>
+              <p>Partner bán hàng, manager điều phối, consultant sản xuất phân tích, analyst xử lý tác vụ. Đây là cơ chế tạo margin truyền thống.</p>
+            </div>
+            <div class="box">
+              <h3>5. Global Delivery</h3>
+              <p>Khả năng triển khai xuyên quốc gia, đa ngành, đa chức năng là rào cản lớn với công ty nhỏ.</p>
+            </div>
+            <div class="box">
+              <h3>6. Technology Ecosystem</h3>
+              <p>Liên minh với Microsoft, Google, NVIDIA, SAP, Oracle, Salesforce, ServiceNow giúp họ đi từ tư vấn sang triển khai thật.</p>
+            </div>
+            <div class="box">
+              <h3>7. AI Platform & Assets</h3>
+              <p>AI agent, accelerator, workflow, knowledge base và audit/tax/consulting platform biến tri thức thành tài sản có thể nhân bản.</p>
+            </div>
+            <div class="box">
+              <h3>8. Learning Engine</h3>
+              <p>Đào tạo liên tục, reskilling và internal AI adoption giúp workforce thích nghi với công nghệ mới.</p>
+            </div>
+            <div class="box">
+              <h3>9. Governance</h3>
+              <p>Quản trị rủi ro, bảo mật, đạo đức AI và chất lượng delivery trở thành năng lực lõi khi AI được dùng rộng.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>VIII. AI tác động vào từng ô Business Model ra sao?</summary>
+        <div class="content">
+          <p class="section-lead">
+            AI không chỉ “tăng năng suất”. AI chạm vào toàn bộ 9 ô Business Model Canvas. Tác động lớn nhất nằm ở Key Activities, Key Resources, Cost Structure, Revenue Streams và Value Proposition.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Ô Business Model</th>
+                <th>Trước AI</th>
+                <th>Sau AI</th>
+                <th>Ý nghĩa cạnh tranh</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Customer Segments</td>
+                <td>Khách hàng cần tư vấn chiến lược, vận hành, kiểm toán, thuế, công nghệ.</td>
+                <td>Khách hàng cần AI transformation, AI governance, digital workforce, productivity redesign.</td>
+                <td>Nhu cầu mới mở ra, nhưng khách hàng cũng kỳ vọng tốc độ và chi phí tốt hơn.</td>
+              </tr>
+              <tr>
+                <td>Value Proposition</td>
+                <td>Insight, recommendation, chuyên gia, báo cáo, triển khai.</td>
+                <td>Speed, automation, agentic delivery, trusted AI, outcome, continuous improvement.</td>
+                <td>Giá trị chuyển từ “biết gì” sang “làm được gì nhanh, an toàn, đo được”.</td>
+              </tr>
+              <tr>
+                <td>Channels</td>
+                <td>Partner relationship, hội thảo, report, C-level selling.</td>
+                <td>Thought leadership + AI platform demonstration + ecosystem co-selling.</td>
+                <td>Bán hàng cần chứng minh năng lực công nghệ thật, không chỉ quan điểm.</td>
+              </tr>
+              <tr>
+                <td>Customer Relationships</td>
+                <td>Dự án theo giai đoạn, quan hệ tư vấn định kỳ.</td>
+                <td>Continuous partnership, managed services, AI operating model, co-innovation.</td>
+                <td>Quan hệ dài hơn, gắn sâu vào vận hành khách hàng hơn.</td>
+              </tr>
+              <tr>
+                <td>Revenue Streams</td>
+                <td>Hourly fee, project fee, audit/tax recurring.</td>
+                <td>Platform fee, managed services, AI agent, outcome-based, governance-as-a-service.</td>
+                <td>Biên lợi nhuận phụ thuộc vào khả năng sản phẩm hóa tri thức.</td>
+              </tr>
+              <tr>
+                <td>Key Resources</td>
+                <td>Consultant, partner, methodology, brand.</td>
+                <td>Consultant + data + AI agent + platform + proprietary assets.</td>
+                <td>Nguồn lực lõi không còn chỉ là người, mà là hệ thống người-máy.</td>
+              </tr>
+              <tr>
+                <td>Key Activities</td>
+                <td>Research, analysis, slide, workshop, implementation.</td>
+                <td>AI-assisted analysis, orchestration, agent design, governance, workflow automation.</td>
+                <td>Công việc tư vấn chuyển từ sản xuất nội dung sang thiết kế hệ thống giải quyết vấn đề.</td>
+              </tr>
+              <tr>
+                <td>Key Partners</td>
+                <td>Đối tác phần mềm, dữ liệu, outsourcing.</td>
+                <td>Microsoft, Google, NVIDIA, cloud, AI platform, enterprise software ecosystems.</td>
+                <td>Alliance trở thành động cơ doanh thu và năng lực delivery.</td>
+              </tr>
+              <tr>
+                <td>Cost Structure</td>
+                <td>Nhân sự là chi phí lớn nhất, đặc biệt pyramid consultant/analyst.</td>
+                <td>Giảm tác vụ thủ công, tăng chi phí platform, data, security, AI governance, reskilling.</td>
+                <td>Công ty phải tái cơ cấu workforce để bảo vệ margin.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <details>
+        <summary>IX. Hành động sớm của các công ty lớn</summary>
+        <div class="content">
+          <p class="section-lead">
+            Các công ty lớn không chỉ nói về AI. Họ đang đầu tư, tái cấu trúc, xây nền tảng, tạo agent, mở rộng alliance và chuyển dịch managed services.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Công ty</th>
+                <th>Quan điểm/hướng đi</th>
+                <th>Hành động sớm</th>
+                <th>Tín hiệu chiến lược</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Accenture</td>
+                <td>AI là trục của enterprise reinvention.</td>
+                <td>Đầu tư nhiều năm vào AI; FY2025 GenAI/agentic AI revenue US$2.7B và bookings US$5.9B; đầu tư vào acquisitions, R&D, learning.</td>
+                <td>Muốn trở thành “reinvention partner” kết hợp strategy, technology, data, AI và managed services.</td>
+              </tr>
+              <tr>
+                <td>Deloitte</td>
+                <td>Kết hợp domain expertise, engineering, GenAI, Agentic AI và Operate services.</td>
+                <td>Tích hợp GenAI/Agentic AI vào Omnia; Deloitte Engineering; Deloitte Ascend; phát triển Operate services.</td>
+                <td>Đưa AI vào cả consulting, audit, tax/legal và vận hành liên tục.</td>
+              </tr>
+              <tr>
+                <td>PwC</td>
+                <td>AI giúp reinvent business, audit và managed services.</td>
+                <td>Đầu tư gần US$1.5B vào AI trong FY2025; Next Generation Audit; mở rộng AI agent ecosystem với Google Cloud; managed services tăng mạnh.</td>
+                <td>Khai thác thế mạnh trust/assurance để cung cấp AI-enabled services an toàn và quy mô.</td>
+              </tr>
+              <tr>
+                <td>EY</td>
+                <td>AI là nền tảng để reimagine enterprise với trust và governance.</td>
+                <td>EY.ai; EY.ai Agentic Platform với NVIDIA; 1.000 AI agents; hơn 100 internal AI apps; AI-related revenue tăng 30%.</td>
+                <td>Đi mạnh vào agentic platform, tax/risk/finance domain và AI governance.</td>
+              </tr>
+              <tr>
+                <td>KPMG</td>
+                <td>Trusted AI và hybrid human-digital workforce.</td>
+                <td>KPMG Workbench multi-agent platform; đầu tư AI và agentic transformation; AI workforce methodology; managed services thế hệ mới.</td>
+                <td>Kết hợp risk/compliance DNA với AI agent để tạo trust layer cho doanh nghiệp.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <details>
+        <summary>X. Mô hình mới đang nổi lên</summary>
+        <div class="content">
+          <p class="section-lead">
+            AI tạo ra các mô hình tư vấn mới. Đây không phải thay đổi công cụ, mà là thay đổi cấu trúc sản xuất, định giá và giao hàng.
+          </p>
+
+          <div class="grid-2">
+            <div class="box">
+              <h3>1. AI-native consulting</h3>
+              <p>Tư vấn được thiết kế từ đầu quanh AI: research, data, diagnosis, scenario, decision support, implementation và measurement đều có AI tham gia.</p>
+              <span class="tag">AI-first workflow</span>
+              <span class="tag">Speed</span>
+              <span class="tag">Lower marginal cost</span>
+            </div>
+            <div class="box">
+              <h3>2. Agentic delivery</h3>
+              <p>AI agent đảm nhiệm các tác vụ cụ thể: phân tích dữ liệu, kiểm tra tuân thủ, tạo báo cáo, giám sát quy trình, hỗ trợ quyết định.</p>
+              <span class="tag">Digital workforce</span>
+              <span class="tag">Workflow automation</span>
+              <span class="tag">Scalable delivery</span>
+            </div>
+            <div class="box">
+              <h3>3. Managed services 2.0</h3>
+              <p>Công ty tư vấn không chỉ khuyến nghị mà vận hành một phần chức năng cho khách hàng, dùng AI để cải tiến liên tục.</p>
+              <span class="tag">Recurring revenue</span>
+              <span class="tag">Continuous improvement</span>
+              <span class="tag">SLA</span>
+            </div>
+            <div class="box">
+              <h3>4. Consulting-as-software</h3>
+              <p>Tri thức tư vấn được đóng gói thành platform, tool, dashboard, playbook số, AI copilot hoặc agent chuyên biệt.</p>
+              <span class="tag">Productized expertise</span>
+              <span class="tag">Platform fee</span>
+              <span class="tag">IP scale</span>
+            </div>
+            <div class="box">
+              <h3>5. Governance-as-a-service</h3>
+              <p>Khách hàng cần quản trị rủi ro, đạo đức, dữ liệu, bảo mật, kiểm soát mô hình và tuân thủ khi AI đi vào vận hành.</p>
+              <span class="tag">Trust</span>
+              <span class="tag">Risk</span>
+              <span class="tag">Compliance</span>
+            </div>
+            <div class="box">
+              <h3>6. Outcome-based advisory</h3>
+              <p>Tư vấn được định giá theo tác động: tăng năng suất, giảm chi phí, tăng doanh thu, rút ngắn chu kỳ, giảm rủi ro.</p>
+              <span class="tag">Measured impact</span>
+              <span class="tag">Shared value</span>
+              <span class="tag">Business results</span>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>XI. Hàm ý cho tư vấn CEO/SME Việt Nam</summary>
+        <div class="content">
+          <p class="section-lead">
+            SME Việt Nam không cần sao chép Big Four, nhưng cần học logic chuyển đổi: từ tư vấn thủ công sang tư vấn có hệ thống, có dữ liệu, có công cụ và có khả năng nhân bản.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Vấn đề với tư vấn SME hiện nay</th>
+                <th>AI mở ra điều gì?</th>
+                <th>Hướng hành động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Phụ thuộc vào cá nhân chuyên gia, khó scale.</td>
+                <td>Chuẩn hóa framework, playbook, checklist, diagnostic tool.</td>
+                <td>Sản phẩm hóa tri thức thành bộ công cụ tư vấn theo chủ đề: chiến lược, BSC/OKR, tổ chức, lãnh đạo, vận hành.</td>
+              </tr>
+              <tr>
+                <td>Nhiều thời gian làm tài liệu, slide, tổng hợp.</td>
+                <td>AI tăng tốc research, draft, phân tích, tạo báo cáo, cá nhân hóa tài liệu.</td>
+                <td>Dùng AI như analyst nội bộ, nhưng chuyên gia vẫn giữ vai trò kiểm chứng logic và quyết định insight.</td>
+              </tr>
+              <tr>
+                <td>Khó chứng minh ROI của tư vấn.</td>
+                <td>AI giúp theo dõi chỉ số, dashboard, before-after, đo tiến độ triển khai.</td>
+                <td>Thiết kế outcome metrics ngay từ đầu: doanh thu, biên lợi nhuận, năng suất, tỷ lệ hoàn thành OKR, năng lực đội ngũ.</td>
+              </tr>
+              <tr>
+                <td>Khách hàng SME cần thực thi, không chỉ khuyến nghị.</td>
+                <td>Có thể xây template vận hành, copilot, checklist triển khai và dashboard theo dõi.</td>
+                <td>Chuyển từ “đào tạo/tư vấn theo buổi” sang “tư vấn + công cụ + coaching + đo lường”.</td>
+              </tr>
+              <tr>
+                <td>Tư vấn dễ bị cạnh tranh giá.</td>
+                <td>AI làm công việc phổ thông rẻ đi, nhưng chuyên môn sâu tăng giá trị.</td>
+                <td>Định vị vào insight CEO, thiết kế hệ thống quản trị, chuyển đổi tổ chức và năng lực lãnh đạo.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="grid-2">
+            <div class="box">
+              <h3>5 vai trò consultant SME tương lai</h3>
+              <ol>
+                <li><strong>Strategic Framer:</strong> đặt đúng vấn đề chiến lược.</li>
+                <li><strong>System Architect:</strong> thiết kế hệ thống quản trị, tổ chức, vận hành.</li>
+                <li><strong>AI-enabled Analyst:</strong> dùng AI để phân tích nhanh và sâu hơn.</li>
+                <li><strong>Change Coach:</strong> giúp CEO và đội ngũ thay đổi hành vi quản trị.</li>
+                <li><strong>Outcome Partner:</strong> đồng hành đến kết quả, không dừng ở tài liệu.</li>
+              </ol>
+            </div>
+            <div class="box">
+              <h3>Lộ trình 12 tháng cho công ty tư vấn SME</h3>
+              <ol>
+                <li>Chọn 3-5 use case tư vấn cốt lõi có thể chuẩn hóa.</li>
+                <li>Biến framework thành diagnostic tool, template, checklist, dashboard.</li>
+                <li>Xây thư viện prompt, case, benchmark, ví dụ theo ngành.</li>
+                <li>Tạo quy trình delivery: trước workshop, trong workshop, sau workshop, đo kết quả.</li>
+                <li>Thiết kế gói dịch vụ mới: tư vấn + công cụ + coaching + đo lường.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="warning">
+            Cảnh báo chiến lược: nếu consultant chỉ dùng AI để làm slide nhanh hơn, lợi thế sẽ rất ngắn hạn. Nếu dùng AI để tái thiết kế toàn bộ mô hình tư vấn, từ chẩn đoán đến triển khai và đo lường, đó mới là lợi thế bền vững.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>XII. Nguồn tham khảo chính thức</summary>
+        <div class="content">
+          <p class="section-lead">
+            Nguồn được ưu tiên là báo cáo, thông cáo, annual review và trang dịch vụ chính thức của các công ty. Một số con số có thể thay đổi theo năm tài chính và cách phân loại service line của từng công ty.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Nhóm nguồn</th>
+                <th>Tài liệu</th>
+                <th>Dữ liệu/ý chính sử dụng</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Deloitte</td>
+                <td><a href="https://www.deloitte.com/global/en/about/press-room/global-revenue-announcement.html" target="_blank" rel="noopener">Deloitte reports FY2025 revenue</a></td>
+                <td>Doanh thu US$70.5B, 470.000+ người, tăng trưởng theo service line, GenAI/Agentic AI, Omnia, Deloitte Engineering, Operate services.</td>
+              </tr>
+              <tr>
+                <td>Deloitte</td>
+                <td><a href="https://www.deloitte.com/middle-east/en/services/consulting/research/generative-ai-and-the-future-of-work.html" target="_blank" rel="noopener">Generative AI and the Future of Work</a></td>
+                <td>AI tác động vào task, skill, work outcomes, humans with machines.</td>
+              </tr>
+              <tr>
+                <td>PwC</td>
+                <td><a href="https://www.pwc.com/gx/en/news-room/press-releases/2025/pwc-global-revenues-rise.html" target="_blank" rel="noopener">PwC global revenues rise to US$56.9 billion</a></td>
+                <td>Doanh thu US$56.9B, 364.000 người, Advisory US$24.3B, đầu tư gần US$1.5B vào AI, Next Generation Audit, managed services.</td>
+              </tr>
+              <tr>
+                <td>PwC</td>
+                <td><a href="https://www.pwc.com/gx/en/services/ai/ai-jobs-barometer.html" target="_blank" rel="noopener">PwC 2025 Global AI Jobs Barometer</a></td>
+                <td>AI-exposed industries, năng suất, kỹ năng, wage premium, tác động đến việc làm.</td>
+              </tr>
+              <tr>
+                <td>PwC</td>
+                <td><a href="https://www.pwc.com/gx/en/news-room/press-releases/2025/scales-global-ai-agent-ecosystem.html" target="_blank" rel="noopener">PwC scales global AI agent ecosystem with Google Cloud</a></td>
+                <td>AI agent ecosystem, hơn 250 agents toàn cầu, Google Cloud, agentic technologies.</td>
+              </tr>
+              <tr>
+                <td>EY</td>
+                <td><a href="https://www.ey.com/en_gl/newsroom/2025/10/ey-announces-global-revenue-of-us-53-2b-for-fiscal-year-2025" target="_blank" rel="noopener">EY announces global revenue of US$53.2B for FY2025</a></td>
+                <td>Doanh thu US$53.2B, Consulting US$16.4B, AI-related revenue tăng 30%, hơn 15.000 người làm AI-led projects, 1.000 AI agents.</td>
+              </tr>
+              <tr>
+                <td>EY</td>
+                <td><a href="https://www.ey.com/en_us/newsroom/2025/03/ey-launching-ey-ai-agentic-platform-created-with-nvidia-ai-to-drive-multi-sector-transformation-starting-with-tax-risk-and-finance-domains" target="_blank" rel="noopener">EY.ai Agentic Platform with NVIDIA AI</a></td>
+                <td>Agentic platform, 150 AI agents ban đầu, tax/risk/finance domain, productivity gains.</td>
+              </tr>
+              <tr>
+                <td>EY</td>
+                <td><a href="https://www.ey.com/en_gl/services/consulting/artificial-intelligence-consulting-services" target="_blank" rel="noopener">EY Artificial Intelligence Consulting Services</a></td>
+                <td>AI consulting approach: human-centered, ethical, outcomes-focused, system-level orchestration.</td>
+              </tr>
+              <tr>
+                <td>KPMG</td>
+                <td><a href="https://kpmg.com/xx/en/media/press-releases/2025/12/kpmg-delivers-rise-in-global-revenue.html" target="_blank" rel="noopener">KPMG delivers 5.1% rise in global revenue</a></td>
+                <td>Doanh thu US$39.8B, headcount 276.030, tăng trưởng Audit, Tax & Legal, Advisory.</td>
+              </tr>
+              <tr>
+                <td>KPMG</td>
+                <td><a href="https://kpmg.com/xx/en/media/press-releases/2025/06/kpmg-launches-a-multi-agent-ai-platform-transforming-client-delivery-and-ways-of-working-across-the-global-organization.html" target="_blank" rel="noopener">KPMG Workbench multi-agent AI platform</a></td>
+                <td>Multi-agent platform, Microsoft technology, client delivery, digital workforce, trusted AI.</td>
+              </tr>
+              <tr>
+                <td>KPMG</td>
+                <td><a href="https://kpmg.com/xx/en/home/insights/2024/04/generative-ai-hails-the-next-generation-of-managed-services.html" target="_blank" rel="noopener">Generative AI hails the next generation of managed services</a></td>
+                <td>Managed services thế hệ mới, productivity, compliance, resilience, customer loyalty.</td>
+              </tr>
+              <tr>
+                <td>Accenture</td>
+                <td><a href="https://www.accenture.com/us-en/about/company/integrated-reporting-financial" target="_blank" rel="noopener">Accenture FY2025 financial performance</a></td>
+                <td>Doanh thu US$69.7B, bookings US$80.6B, GenAI/agentic AI revenue US$2.7B, bookings US$5.9B, investment in acquisitions/R&D/learning.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </main>
+
+    <footer>
+      <div>XLeaders Academy | xleader.edu.vn</div>
+      <div>Nghiên cứu HTML drilldown | Trang 1</div>
+    </footer>
+  </div>
+</body>
+</html>
